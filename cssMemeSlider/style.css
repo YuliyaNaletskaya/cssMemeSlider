@@ -28,11 +28,12 @@ body {
 }
 
 .slider-img {
-  display: flex;  
+  display: flex;
 }
 
 img {
   min-width: 100%;
+  transition: all 1s ease;
 }
 
 .down {
@@ -57,14 +58,19 @@ img {
   font-size: 1.3rem;
   text-align: left;
   color: azure;
+  transition: all 1s ease;
 }
-.slider-btn {
+
+.labels {
   padding-top: 0.4rem;
   display: flex;
 }
 
-.btn {
-  display: flex;
+.slider-btn input {
+  display: none;
+}
+
+label {
   margin-left: 0.6rem;
   width: 0.8rem;
   height: 0.8rem;
@@ -72,13 +78,40 @@ img {
   background-color: rgb(75, 120, 247);
 }
 
+.contaner .down .labels label:hover {
+  cursor: pointer;
+  background-color: azure;
+}
+
+#one:checked ~ .contaner .down .labels label.one,
+#two:checked ~ .contaner .down .labels label.two,
+#three:checked ~ .contaner .down .labels label.three,
+#four:checked ~ .contaner .down .labels label.four {
+  background-color: rgb(42, 41, 41);
+  border: 0.1rem solid rgba(75, 121, 247);
+}
+
+#one:checked ~ .contaner .slider .slider-img .img1,
+#one:checked ~ .contaner .down .textarea .slider-text .t1 {
+  margin-left: 0;
+}
+
+#two:checked ~ .contaner .slider .slider-img img.img1,
+#two:checked ~ .contaner .down .textarea .slider-text .t1 {
+  margin-left: -100%;
+}
+#three:checked ~ .contaner .slider .slider-img img.img1,
+#three:checked ~ .contaner .down .textarea .slider-text .t1 {
+  margin-left: -200%;
+}
+#four:checked ~ .contaner .slider .slider-img img.img1,
+#four:checked ~ .contaner .down .textarea .slider-text .t1 {
+  margin-left: -300%;
+}
+
 @media screen and (max-width: 700px) {
   .down {
     flex-direction: column-reverse;
     gap: 1rem;
-  }
-
-  .slider-btn {
-    justify-content: center;
   }
 }
