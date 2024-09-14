@@ -39,6 +39,7 @@ img {
 .down {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .textarea {
@@ -62,8 +63,9 @@ img {
 }
 
 .labels {
-  padding-top: 0.4rem;
+  width: 40%;
   display: flex;
+  justify-content: flex-end;
 }
 
 .slider-btn input {
@@ -71,24 +73,33 @@ img {
 }
 
 label {
-  margin-left: 0.6rem;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 100%;
-  background-color: rgb(75, 120, 247);
+  width: 1.8rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.contaner .down .labels label:hover {
+.area span {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 100%;
+  background-color: rgb(105 141 245 / 90%);
+}
+
+.area span:hover {
   cursor: pointer;
   background-color: azure;
+  transition: all 0.5s ease;
 }
 
-#one:checked ~ .contaner .down .labels label.one,
-#two:checked ~ .contaner .down .labels label.two,
-#three:checked ~ .contaner .down .labels label.three,
-#four:checked ~ .contaner .down .labels label.four {
+#one:checked ~ .contaner .down .labels .area .one,
+#two:checked ~ .contaner .down .labels .area .two,
+#three:checked ~ .contaner .down .labels .area .three,
+#four:checked ~ .contaner .down .labels .area .four {
   background-color: rgb(42, 41, 41);
-  border: 0.1rem solid rgba(75, 121, 247);
+  border: 0.1rem solid rgb(105 141 245 / 90%);
 }
 
 #one:checked ~ .contaner .slider .slider-img .img1,
@@ -113,5 +124,14 @@ label {
   .down {
     flex-direction: column-reverse;
     gap: 1rem;
+    align-items: center;
+  }
+
+  .textarea{
+    width: 100%;
+  }
+
+  .labels {
+    justify-content: center;
   }
 }
