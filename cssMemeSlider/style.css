@@ -80,6 +80,10 @@ label {
   align-items: center;
 }
 
+label:hover {
+  cursor: pointer;
+}
+
 .area span {
   display: block;
   width: 0.9rem;
